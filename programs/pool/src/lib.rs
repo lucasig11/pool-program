@@ -17,7 +17,7 @@ pub mod pool {
         Ok(())
     }
 
-    pub fn join(ctx: Context<Join>) -> ProgramResult {
+    pub fn add(ctx: Context<Add>) -> ProgramResult {
         let state = &mut ctx.accounts.state;
         let user_key = ctx.accounts.user_account.key();
         if !state.members.contains(&user_key) {
@@ -26,7 +26,7 @@ pub mod pool {
         Ok(())
     }
 
-    pub fn take(ctx: Context<Take>) -> ProgramResult {
+    pub fn remove(ctx: Context<Remove>) -> ProgramResult {
         let state = &mut ctx.accounts.state;
         let user_key = ctx.accounts.user_account.key();
         if let Some(i) = state.members.iter().position(|&k| k == user_key) {
@@ -71,7 +71,7 @@ pub struct Initialize<'info> {
 }
 
 #[derive(Accounts)]
-pub struct Join<'info> {
+pub struct Add<'info> {
     #[account(
         mut,
         constraint =
@@ -86,12 +86,8 @@ pub struct Join<'info> {
 }
 
 #[derive(Accounts)]
-pub struct Take<'info> {
-    #[account(
-        mut,
-        seeds = [STATE_SEED],
-        bump,
-    )]
+pub struct Remove<'info> {
+    #[account(mut)]
     pub state: Account<'info, ProgramState>,
     pub user_account: Account<'info, UserAccount>,
 }

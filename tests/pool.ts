@@ -50,7 +50,7 @@ describe("pool", () => {
   });
 
   it("Pushes a new member to the pool.", async () => {
-    await program.rpc.join({
+    await program.rpc.add({
       accounts: {
         state: characterPool,
         userAccount: user,
@@ -65,7 +65,7 @@ describe("pool", () => {
   });
 
   it("Takes a member from the pool.", async () => {
-    await program.rpc.take({
+    await program.rpc.remove({
       accounts: {
         state: characterPool,
         userAccount: user,
