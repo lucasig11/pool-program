@@ -2,14 +2,14 @@ import * as anchor from "@project-serum/anchor";
 import { Program } from "@project-serum/anchor";
 import assert from "assert";
 
-import { Pool } from "../target/types/pool";
+import { PoolProgram } from "../target/types/pool_program";
 
-describe("pool", () => {
+describe("pool-program", () => {
   anchor.setProvider(anchor.Provider.env());
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  const program = anchor.workspace.Pool as Program<Pool>;
+  const program = anchor.workspace.PoolProgram as Program<PoolProgram>;
 
   const charactersProgram = new anchor.web3.PublicKey(
     "HYx4J9Np2BJTgibvYjNvfKhXk9zsxyLVDDskRDbE64yg"

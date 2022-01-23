@@ -779,7 +779,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "pool"
+name = "pool-program"
 version = "0.1.0"
 dependencies = [
  "anchor-lang",

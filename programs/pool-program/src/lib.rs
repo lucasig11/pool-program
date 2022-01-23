@@ -3,10 +3,10 @@ use std::mem::size_of;
 
 use characters_program::{program::CharactersProgram, UserAccount};
 
-declare_id!("BrTDHy59xLXR4pFimtoG9CBp4ATgKJpmQtv8wZvb5diQ");
+declare_id!("CXJhrbVVLPnjb5AVBHCQzyLuqDq6ezJfzJkn5QmCMcEK");
 
 #[program]
-pub mod pool {
+pub mod pool_program {
     use super::*;
 
     pub fn initialize(ctx: Context<Initialize>, dto: InitializePoolDTO) -> ProgramResult {
