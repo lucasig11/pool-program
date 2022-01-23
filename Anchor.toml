@@ -1,0 +1,12 @@
+[programs.devnet]
+pool = "BrTDHy59xLXR4pFimtoG9CBp4ATgKJpmQtv8wZvb5diQ"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/anchor.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
