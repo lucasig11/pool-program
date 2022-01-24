@@ -54,6 +54,7 @@ describe("pool-program", () => {
       accounts: {
         state: characterPool,
         userAccount: user,
+        authority: program.provider.wallet.publicKey,
         charactersProgram,
       },
     });
@@ -69,6 +70,7 @@ describe("pool-program", () => {
       accounts: {
         state: characterPool,
         userAccount: user,
+        authority: program.provider.wallet.publicKey,
       },
     });
 
